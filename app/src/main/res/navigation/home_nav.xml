@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.almuhasabah.ui.homefragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_prayerFragment"
+            app:destination="@id/prayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/prayerFragment"
+        android:name="com.example.almuhasabah.ui.prayerfragment.PrayerFragment"
+        android:label="PrayerFragment" >
+        <action
+            android:id="@+id/action_prayerFragment_to_selfAccessFragment"
+            app:destination="@id/selfAccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selfAccessFragment"
+        android:name="com.example.almuhasabah.ui.selfaccessfragment.SelfAccessFragment"
+        android:label="SelfAccessFragment" >
+        <action
+            android:id="@+id/action_selfAccessFragment_to_statusFragment"
+            app:destination="@id/statusFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statusFragment"
+        android:name="com.example.almuhasabah.ui.statusfragment.StatusFragment"
+        android:label="StatusFragment" >
+        <action
+            android:id="@+id/action_statusFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.example.almuhasabah.ui.profilefragment.ProfileFragment"
+        android:label="ProfileFragment" />
+</navigation>

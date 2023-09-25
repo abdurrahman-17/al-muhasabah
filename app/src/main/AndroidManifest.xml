@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.almuhasabah">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".AlMuhasabah"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_foreground"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GmmCoApp"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.editsecprofile.EditSecondaryProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.emailvalidationotp.EmailValidationOtpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.emailvalidation.EmailValidationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.editsecondaryuser.EditSecondaryUserActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.editprofile.EditProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.secondaryuser.SecondaryUserActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.updatepassword.UpdatePasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.forgetpassword.ForgetPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.registerscreen.RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.loginscreen.LoginScreenActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.homescreen.HomeActivity"
+            android:exported="true"
+            android:configChanges="keyboard|screenSize|orientation"/>
+        <activity
+            android:name=".ui.splashscreen.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

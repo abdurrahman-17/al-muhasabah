@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home_icon"/>
+    <item android:title="Prayer"
+        android:id="@+id/prayer"
+        android:icon="@drawable/ic_prayer_one"/>
+    <item android:title="Self"
+        android:id="@+id/self"
+        android:icon="@drawable/ic_self"/>
+    <item android:title="Status"
+        android:id="@+id/status"
+        android:icon="@drawable/ic_states"/>
+    <item android:title="Profile"
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_baseline_person_24"/>
+
+</menu>

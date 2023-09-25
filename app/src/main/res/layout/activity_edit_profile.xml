@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="editprofileVM"
+            type="com.example.almuhasabah.ui.editprofile.EditProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/edit_profile_layout"
+        android:background="@drawable/bg_all"
+        tools:context=".ui.editprofile.EditProfileActivity">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_15sdp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_centre_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent=".21" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_iv"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:src="@drawable/ic_profile_pic"
+                    app:layout_constraintBottom_toTopOf="@id/name_et"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/camera_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:background="@drawable/circle_bg_white"
+                    app:layout_constraintBottom_toBottomOf="@+id/profile_iv"
+                    app:layout_constraintRight_toRightOf="@+id/profile_iv"
+                    app:layout_constraintTop_toTopOf="@+id/guideline_centre_vertical" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_picker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_camera"
+                    app:layout_constraintBottom_toBottomOf="@+id/camera_iv"
+                    app:layout_constraintLeft_toLeftOf="@+id/camera_iv"
+                    app:layout_constraintRight_toRightOf="@+id/camera_iv"
+                    app:layout_constraintTop_toTopOf="@+id/camera_iv" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/selector_edittext"
+                    android:drawableStart="@drawable/ic_user"
+                    android:drawableLeft="@drawable/ic_user"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:elevation="@dimen/_5sdp"
+                    android:hint="Name"
+                    android:fontFamily="@font/roboto"
+                    android:inputType="textPersonName"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@={editprofileVM.name}"
+                    android:textColor="@color/brown"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toTopOf="@id/age_et"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profile_iv" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/age_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:layout_constraintBottom_toTopOf="@id/linear1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name_et">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/selector_edittext">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/Age_et"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/editborder"
+                                android:clickable="false"
+                                android:cursorVisible="false"
+                                android:drawableLeft="@drawable/ic_user"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:focusable="false"
+                                android:fontFamily="@font/roboto"
+                                android:focusableInTouchMode="false"
+                                android:hint="Date Of Birth"
+                                android:text="@={editprofileVM.ageNo}"
+                                android:inputType="number"
+                                android:padding="@dimen/_10sdp"
+                                android:textColor="@color/brown"
+                                android:textSize="@dimen/_12ssp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/calenderPicker"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <ImageView
+                                android:id="@+id/calenderPicker"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:src="@drawable/ic_baseline_calendar_month_24"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/Age_et" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <TextView
+                            android:id="@+id/ageTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@={editprofileVM.age}"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linear1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/linear2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/age_et">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/selector_edittext">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/gender_sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_drop_down"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:entries="@array/gender"
+                            android:fontFamily="@font/roboto"
+                            android:onItemSelected="@{(parent,view,pos,id)->editprofileVM.onSelectGender(parent,view,pos,id)}"
+                            android:overlapAnchor="false"
+                            android:padding="@dimen/_10sdp"
+                            android:textColor="@color/brown"
+                            android:textColorHint="@color/colorGray"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+
+
+                <!--<androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/gender_sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/selector_edittext"
+                    android:drawableStart="@drawable/ic_user"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:elevation="@dimen/_5sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:onItemSelected="@{(parent,view,pos,id)->editProfileVM.onSelectGender(parent,view,pos,id)}"
+                    android:entries="@array/gender"
+                    android:prompt="Choose a Gender"
+                    android:textColor="@color/brown"
+                    android:overlapAnchor="false"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintTop_toBottomOf="@id/age_et"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/marital_et"/>
+-->
+
+
+                <LinearLayout
+                    android:id="@id/linear2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/contact_et"
+                    app:layout_constraintTop_toBottomOf="@+id/linear1"
+                    tools:layout_editor_absoluteX="75dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/selector_edittext">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/marital_et"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_drop_down"
+                            android:drawableRight="@drawable/ic_drop_down"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:entries="@array/marital_status"
+                            android:fontFamily="@font/roboto"
+                            android:onItemSelected="@{(parent,view,pos,id)->editprofileVM.onSelectedStatus(parent,view,pos,id)}"
+                            android:overlapAnchor="false"
+                            android:padding="@dimen/_10sdp"
+                            android:textColor="@color/brown"
+                            android:textColorHint="@color/colorGray"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+
+                <!--
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/marital_et"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_marginRight="@dimen/_10sdp"
+                                    android:background="@drawable/selector_edittext"
+                                    android:drawableStart="@drawable/ic_user"
+                                    android:drawablePadding="@dimen/_10sdp"
+                                    android:elevation="@dimen/_5sdp"
+                                    android:hint="Marital Status"
+                                    android:padding="@dimen/_10sdp"
+                                    android:text="@={editProfileVM.marital_status}"
+                                    android:textColor="@color/brown"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:layout_constraintTop_toBottomOf="@id/gender_sp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintBottom_toTopOf="@id/contact_et"/>
+                -->
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/contact_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/selector_edittext"
+                    android:drawableStart="@drawable/ic_ph"
+                    android:drawableLeft="@drawable/ic_ph"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:elevation="@dimen/_5sdp"
+                    android:hint="Phone Number"
+                    android:fontFamily="@font/roboto"
+                    android:inputType="number"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@={editprofileVM.phone_no}"
+                    android:textColor="@color/brown"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toTopOf="@id/submit_btn"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linear2" />
+
+
+                <Button
+                    android:id="@+id/submit_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:backgroundTint="@color/brown"
+                    android:text="Submit"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/contact_et" />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

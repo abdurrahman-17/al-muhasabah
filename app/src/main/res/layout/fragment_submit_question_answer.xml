@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="submitQuesAnsVM"
+            type="com.example.almuhasabah.ui.sumbitquestionanswer.SubmitQuestionAnswerViewModel" />
+
+        <variable
+            name="list"
+            type="java.util.List&lt;String&gt;"/>
+
+        <import type="android.view.View"/>
+
+    </data>
+
+    <FrameLayout
+        android:id="@+id/submit_ques_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_all"
+        tools:context=".ui.sumbitquestionanswer.SubmitQuestionAnswer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_15sdp">
+
+            <TextView
+                android:id="@+id/question_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_18sdp"
+                android:textColor="@color/brown"
+                android:text="@{submitQuesAnsVM.question}"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/option_rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:visibility="@{submitQuesAnsVM.isYesOrNoType() ?View.VISIBLE:View.GONE}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/submit_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question_title" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/multi_option_checkBox_rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:visibility="@{submitQuesAnsVM.isMultipleOptionCheckBox() ?View.VISIBLE:View.GONE}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/submit_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question_title" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/comment_rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:visibility="@{submitQuesAnsVM.isCommentType() ?View.VISIBLE:View.GONE}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/submit_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question_title" />
+
+
+                        <Button
+                            android:id="@+id/submit_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:backgroundTint="@color/brown"
+                            android:text="Submit"
+                            android:fontFamily="@font/roboto"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </FrameLayout>
+</layout>

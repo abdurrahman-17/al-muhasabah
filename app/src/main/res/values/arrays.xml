@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="screenTitle">
+        <item>Profile</item>
+        <item>Update Password</item>
+        <item>About</item>
+        <item>Logout</item>
+    </string-array>
+
+    <array name="icon">
+        <item>@drawable/ic_profile</item>
+        <item>@drawable/ic_password</item>
+        <item>@drawable/ic_door_front</item>
+        <item>@drawable/logout_icon</item>
+    </array>
+
+    <string-array name="gender">
+        <item>Select Gender</item>
+        <item>male</item>
+        <item>female</item>
+    </string-array>
+
+    <string-array name="marital_status">
+        <item>Marital Status</item>
+        <item>married</item>
+        <item>unmarried</item>
+
+    </string-array>
+
+</resources>

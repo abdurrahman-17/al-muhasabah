@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="registerVM"
+            type="com.example.almuhasabah.ui.registerscreen.RegisterViewModel" />
+    </data>
+
+ <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="@drawable/ic_bg_splash">
+
+     <androidx.constraintlayout.widget.ConstraintLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:id="@+id/register_layout"
+         tools:context=".ui.registerscreen.RegisterActivity">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="SIGN UP"
+             android:id="@+id/signup_tv"
+             android:layout_marginTop="@dimen/_10sdp"
+             android:textColor="@color/brown"
+             android:fontFamily="@font/noto_serif_bold"
+             android:textSize="@dimen/_18ssp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"/>
+
+
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="@dimen/_20sdp"
+             android:layout_marginRight="@dimen/_20sdp"
+             android:layout_marginTop="@dimen/_20sdp"
+             android:layout_marginBottom="@dimen/_20sdp"
+             app:layout_constraintBottom_toBottomOf="parent"
+             android:theme="@style/Theme.MaterialComponents.Light"
+             app:cardCornerRadius="@dimen/_15sdp"
+             app:layout_constraintRight_toRightOf="parent"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/signup_tv"
+             >
+
+             <androidx.constraintlayout.widget.ConstraintLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+                 <ImageView
+                     android:id="@+id/logo_iv"
+                     android:layout_width="@dimen/_120sdp"
+                     android:layout_height="@dimen/_120sdp"
+                     android:contentDescription="@null"
+                     android:src="@drawable/ic_new_logo"
+                     app:layout_constraintLeft_toLeftOf="parent"
+                     app:layout_constraintRight_toRightOf="parent"
+                     app:layout_constraintTop_toTopOf="parent" />
+
+
+                 <LinearLayout
+                     android:id="@+id/linear_3"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical"
+                     app:layout_constraintTop_toBottomOf="@id/logo_iv">
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:id="@+id/name_et"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="@dimen/_10sdp"
+                         android:layout_marginTop="@dimen/_10sdp"
+                         android:layout_marginRight="@dimen/_10sdp"
+                         android:background="@drawable/selector_edittext"
+                         android:drawableStart="@drawable/ic_user"
+                         android:drawablePadding="@dimen/_10sdp"
+                         android:elevation="@dimen/_5sdp"
+                         android:fontFamily="@font/roboto"
+                         android:hint="Name"
+                         android:padding="@dimen/_10sdp"
+                         android:text="@={registerVM.name}"
+                         android:textColor="@color/brown"
+                         android:textSize="@dimen/_12ssp" />
+
+                     <!-- <com.google.android.material.textfield.TextInputEditText
+                          android:id="@+id/email_et"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginLeft="@dimen/_10sdp"
+                          android:layout_marginTop="@dimen/_10sdp"
+                          android:layout_marginRight="@dimen/_10sdp"
+                          android:background="@drawable/selector_edittext"
+                          android:drawableStart="@drawable/ic_user"
+                          android:drawablePadding="@dimen/_10sdp"
+                          android:elevation="@dimen/_5sdp"
+
+                          android:hint="Email"
+                          android:padding="@dimen/_10sdp"
+                          android:text="@={beforeLoginVM.email}"
+                          android:textColor="@color/brown"
+                          android:textSize="@dimen/_12ssp" />-->
+
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:id="@+id/user_et"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="@dimen/_10sdp"
+                         android:layout_marginTop="@dimen/_10sdp"
+                         android:layout_marginRight="@dimen/_10sdp"
+                         android:background="@drawable/selector_edittext"
+                         android:drawableStart="@drawable/ic_user"
+                         android:drawablePadding="@dimen/_10sdp"
+                         android:elevation="@dimen/_5sdp"
+                         android:fontFamily="@font/roboto"
+                         android:hint="User Name"
+                         android:padding="@dimen/_10sdp"
+                         android:text="@={registerVM.username}"
+                         android:textColor="@color/brown"
+                         android:textSize="@dimen/_12ssp" />
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="@dimen/_10sdp"
+                         android:layout_marginTop="@dimen/_10sdp"
+                         android:layout_marginRight="@dimen/_10sdp"
+                         android:orientation="horizontal">
+
+                         <androidx.constraintlayout.widget.ConstraintLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             android:background="@drawable/selector_edittext">
+
+                             <com.google.android.material.textfield.TextInputEditText
+                                 android:id="@+id/age_et"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:background="@drawable/editborder"
+                                 android:clickable="false"
+                                 android:cursorVisible="false"
+                                 android:drawableLeft="@drawable/ic_user"
+                                 android:drawablePadding="@dimen/_10sdp"
+                                 android:focusable="false"
+                                 android:focusableInTouchMode="false"
+                                 android:fontFamily="@font/roboto"
+                                 android:hint="Date of Birth"
+                                 android:inputType="number"
+                                 android:padding="@dimen/_10sdp"
+                                 android:textColor="@color/brown"
+                                 android:textSize="@dimen/_12ssp"
+                                 app:layout_constraintBottom_toBottomOf="parent"
+                                 app:layout_constraintEnd_toStartOf="@+id/calenderPicker"
+                                 app:layout_constraintStart_toStartOf="parent"
+                                 app:layout_constraintTop_toTopOf="parent" />
+
+
+                             <ImageView
+                                 android:id="@+id/calenderPicker"
+                                 android:layout_width="@dimen/_20sdp"
+                                 android:layout_height="@dimen/_20sdp"
+                                 android:layout_gravity="center"
+                                 android:layout_marginEnd="@dimen/_5sdp"
+                                 android:layout_marginRight="@dimen/_5sdp"
+                                 android:src="@drawable/ic_baseline_calendar_month_24"
+                                 app:layout_constraintBottom_toBottomOf="parent"
+                                 app:layout_constraintEnd_toEndOf="parent"
+                                 app:layout_constraintTop_toTopOf="@+id/age_et" />
+
+                         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                         <TextView
+                             android:id="@+id/ageTv"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@={registerVM.age}"
+                             android:visibility="gone" />
+
+
+                     </LinearLayout>
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal">
+
+                         <androidx.constraintlayout.widget.ConstraintLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             android:layout_marginLeft="@dimen/_10sdp"
+                             android:layout_marginTop="@dimen/_10sdp"
+                             android:layout_marginRight="@dimen/_10sdp"
+                             android:background="@drawable/selector_edittext">
+
+                             <androidx.appcompat.widget.AppCompatSpinner
+                                 android:id="@+id/gender_et"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:drawableRight="@drawable/ic_drop_down"
+                                 android:drawablePadding="@dimen/_10sdp"
+                                 android:elevation="@dimen/_5sdp"
+                                 android:entries="@array/gender"
+                                 android:fontFamily="@font/roboto"
+                                 android:onItemSelected="@{(parent,view,pos,id)->registerVM.onSelectGender(parent,view,pos,id)}"
+                                 android:overlapAnchor="false"
+                                 android:padding="@dimen/_10sdp"
+                                 android:textColor="@color/brown"
+                                 android:textSize="@dimen/_12ssp"
+                                 app:layout_constraintBottom_toBottomOf="parent"
+                                 app:layout_constraintEnd_toEndOf="parent"
+                                 app:layout_constraintStart_toStartOf="parent"
+                                 app:layout_constraintTop_toTopOf="parent" />
+
+
+                         </androidx.constraintlayout.widget.ConstraintLayout>
+
+                     </LinearLayout>
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content">
+
+
+                         <androidx.constraintlayout.widget.ConstraintLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             android:layout_marginLeft="@dimen/_10sdp"
+                             android:layout_marginTop="@dimen/_10sdp"
+                             android:layout_marginRight="@dimen/_10sdp"
+                             android:background="@drawable/selector_edittext">
+
+                             <androidx.appcompat.widget.AppCompatSpinner
+                                 android:id="@+id/marital_et"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:drawableStart="@drawable/ic_user"
+                                 android:drawablePadding="@dimen/_10sdp"
+                                 android:elevation="@dimen/_5sdp"
+                                 android:entries="@array/marital_status"
+                                 android:fontFamily="@font/roboto"
+                                 android:onItemSelected="@{(parent,view,pos,id)->registerVM.onSelectedStatus(parent,view,pos,id)}"
+                                 android:overlapAnchor="false"
+                                 android:padding="@dimen/_10sdp"
+                                 android:textColor="@color/brown"
+                                 android:textSize="@dimen/_12ssp"
+                                 app:layout_constraintBottom_toBottomOf="parent"
+                                 app:layout_constraintEnd_toEndOf="parent"
+                                 app:layout_constraintStart_toStartOf="parent"
+                                 app:layout_constraintTop_toTopOf="parent" />
+
+                         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                     </LinearLayout>
+
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:id="@+id/contact_et"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="@dimen/_10sdp"
+                         android:layout_marginTop="@dimen/_10sdp"
+                         android:layout_marginRight="@dimen/_10sdp"
+                         android:background="@drawable/selector_edittext"
+                         android:drawableStart="@drawable/ic_ph"
+                         android:drawablePadding="@dimen/_10sdp"
+                         android:elevation="@dimen/_5sdp"
+                         android:fontFamily="@font/roboto"
+                         android:hint="Contact Number"
+                         android:padding="@dimen/_10sdp"
+                         android:text="@={registerVM.phone_no}"
+                         android:textColor="@color/brown"
+                         android:textSize="@dimen/_12ssp" />
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:id="@+id/password_et"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="@dimen/_10sdp"
+                         android:layout_marginTop="@dimen/_10sdp"
+                         android:layout_marginRight="@dimen/_10sdp"
+                         android:layout_marginBottom="@dimen/_10sdp"
+                         android:background="@drawable/selector_edittext"
+                         android:drawableStart="@drawable/ic_password"
+                         android:drawablePadding="@dimen/_10sdp"
+                         android:elevation="@dimen/_5sdp"
+                         android:fontFamily="@font/roboto"
+                         android:hint="Password"
+                         android:inputType="textPassword"
+                         android:padding="@dimen/_10sdp"
+                         android:text="@={registerVM.password}"
+                         android:textColor="@color/brown"
+                         android:textSize="@dimen/_12ssp" />
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:id="@+id/confirm_password_et"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="@dimen/_10sdp"
+                         android:layout_marginTop="@dimen/_10sdp"
+                         android:layout_marginRight="@dimen/_10sdp"
+                         android:layout_marginBottom="@dimen/_10sdp"
+                         android:background="@drawable/selector_edittext"
+                         android:drawableStart="@drawable/ic_password"
+                         android:drawablePadding="@dimen/_10sdp"
+                         android:elevation="@dimen/_5sdp"
+                         android:fontFamily="@font/roboto"
+                         android:hint="Confirm Password"
+                         android:inputType="textPassword"
+                         android:padding="@dimen/_10sdp"
+                         android:textColor="@color/brown"
+                         android:textSize="@dimen/_12ssp" />
+                 </LinearLayout>
+
+
+                 <TextView
+                     android:id="@+id/login_txt"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="@dimen/_10sdp"
+                     android:fontFamily="@font/roboto"
+                     android:text="Already have Account ?"
+                     android:textColor="@color/brown"
+                     android:textSize="@dimen/_10ssp"
+                     android:layout_marginBottom="@dimen/_10sdp"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toStartOf="@+id/login_tv"
+                     app:layout_constraintHorizontal_chainStyle="packed"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toBottomOf="@+id/signup_btn" />
+
+                 <Button
+                     android:id="@+id/signup_btn"
+                     android:layout_width="match_parent"
+                     android:layout_height="@dimen/_35sdp"
+                     android:textStyle="bold"
+                     android:layout_marginStart="@dimen/_10sdp"
+                     android:layout_marginTop="@dimen/_10sdp"
+                     android:layout_marginEnd="@dimen/_10sdp"
+                     android:backgroundTint="#712F12"
+                     android:fontFamily="@font/roboto"
+                     android:text="Register"
+                     android:textSize="@dimen/_10ssp"
+                     android:textColor="@color/white"
+                     app:layout_constraintTop_toBottomOf="@+id/linear_3"
+                     tools:layout_editor_absoluteX="0dp" />
+
+                 <TextView
+                     android:id="@+id/login_tv"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginLeft="@dimen/_3sdp"
+                     android:fontFamily="@font/roboto"
+                     android:text="@string/login"
+                     android:textColor="@color/brown"
+                     android:textSize="@dimen/_10ssp"
+                     app:layout_constraintBottom_toBottomOf="@+id/login_txt"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintHorizontal_bias="0.5"
+                     app:layout_constraintStart_toEndOf="@+id/login_txt"
+                     app:layout_constraintTop_toTopOf="@+id/login_txt" />
+
+
+             </androidx.constraintlayout.widget.ConstraintLayout>
+
+         </com.google.android.material.card.MaterialCardView>
+
+
+     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+ </ScrollView>
+</layout>

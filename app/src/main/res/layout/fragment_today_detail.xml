@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="todaydetailVM"
+            type="com.example.almuhasabah.ui.todaydetailfragment.TodayDetailViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_all"
+        tools:context=".ui.todaydetailfragment.TodayDetailFragment">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:paddingHorizontal="@dimen/_10sdp">
+
+          <TextView
+              android:id="@+id/textView17"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/_10sdp"
+              android:text="Fajr"
+              android:textColor="@color/brown"
+              android:textSize="@dimen/_20ssp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              />
+
+          <com.google.android.material.card.MaterialCardView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              app:cardCornerRadius="@dimen/_10sdp"
+              android:layout_marginTop="@dimen/_10sdp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/textView17">
+
+              <androidx.constraintlayout.widget.ConstraintLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+                  <androidx.recyclerview.widget.RecyclerView
+                      android:id="@+id/recyclerView"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="@dimen/_10sdp"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toTopOf="parent"
+                      tools:listitem="@layout/today_detail_item"/>
+
+
+
+                  <Button
+                      android:layout_width="wrap_content"
+                      android:layout_height="@dimen/_42sdp"
+                      android:layout_marginTop="@dimen/_10sdp"
+                      android:backgroundTint="@color/brown"
+                      android:text="SUMBIT"
+                      android:layout_marginBottom="@dimen/_10sdp"
+                      android:textColor="@color/white"
+                      app:layout_constraintBottom_toBottomOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+
+              </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+          </com.google.android.material.card.MaterialCardView>
+
+
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>
